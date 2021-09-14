@@ -1,10 +1,10 @@
 import React, {useState} from "react";
-import { Switch, Route, Link } from "react-router-dom"
+import { Switch, Route } from "react-router-dom"
 import './App.css';
 import "bootstrap/dist/css/bootstrap.min.css";
-import AddReview from "./components/add-review";
-import RestaurantsList from "./components/restaurants-list";
-import Restaurant from "./components/restaurants";
+import AddReview from "./components/Restaurants/add-review";
+import RestaurantsList from "./components/Restaurants/restaurants-list";
+import Restaurant from "./components/Restaurants/restaurants";
 import Login from "./components/Login/login";
 import Navbar from "./components/Navbar/navbar";
 

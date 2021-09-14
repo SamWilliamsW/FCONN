@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import RestaurantDataService from "../../services/restaurant";
 import { Link } from "react-router-dom"
+import { Button } from "@material-ui/core"
 
 const Restaurant = props => {
     const initialRestaurantState = {
@@ -68,7 +69,7 @@ const Restaurant = props => {
                            </p>
                            {props.user && props.user.id === review.user_id &&
                               <div className="row">
-                                <a onClick={() => deleteReview(review._id, index)} className="btn btn-primary col-lg-5 mx-1 mb-1">Delete</a>
+                                <Button onClick={() => deleteReview(review._id, index)} className="btn btn-primary col-lg-5 mx-1 mb-1">Delete</Button>
                                 <Link to={{
                                   pathname: "/restaurants/" + props.match.params.id + "/review",
                                   state: {

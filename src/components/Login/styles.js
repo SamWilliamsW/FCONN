@@ -23,6 +23,9 @@ export default makeStyles((theme) => ({
   },
   submit: {
     margin: theme.spacing(3, 0, 2),
+    '&:hover': {
+      color: '#fff'
+    }
   },
   googleButton: {
     marginBottom: theme.spacing(2),

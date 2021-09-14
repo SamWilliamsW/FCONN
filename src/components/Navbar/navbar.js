@@ -1,10 +1,7 @@
 import React, {useState} from 'react'
-import { Switch, Route, Link } from "react-router-dom"
-import { Avatar, Typography, Button, AppBar} from '@material-ui/core'
-import RestaurantsList from "../Restaurants/restaurants-list";
-import Restaurant from "../Restaurants/restaurants";
-import Login from "../Login/login";
-import AddReview from '../add-review';
+import { Link } from "react-router-dom"
+import { Avatar, Button, AppBar} from '@material-ui/core'
+
 import useStyles from './styles';
 
 export default function Navbar() {
@@ -24,7 +21,7 @@ export default function Navbar() {
     return (
         <AppBar className={styles.appBar} position="static" color="inherit">
             <a href="/restaurants" className="navbar-brand">
-                Restaurant Reviews
+                Food Connection
             </a>
             { user ? (
                 <div>
@@ -32,7 +29,7 @@ export default function Navbar() {
                     <Button variant="contained" color="secondary"></Button>
                 </div>
             ) : (            
-                <Button component={Link} to="/login" variant="contained" color="primary">Sign in</Button>
+                <Button className={styles.button} component={Link} to="/login" variant="contained" color="primary">Sign in</Button>
             )}
         </AppBar>
     )
