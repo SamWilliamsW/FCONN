@@ -1,5 +1,6 @@
-import React, {useState} from "react";
-import { Switch, Route } from "react-router-dom"
+import React from "react";
+import { Container } from '@material-ui/core';
+import { Switch, Route, Redirect, BrowserRouter } from "react-router-dom"
 import './App.css';
 import "bootstrap/dist/css/bootstrap.min.css";
 import AddReview from "./components/Restaurants/add-review";
@@ -8,42 +9,22 @@ import Restaurant from "./components/Restaurants/restaurants";
 import Login from "./components/Login/login";
 import Navbar from "./components/Navbar/navbar";
 
-function App() {
-  const [user, setUser] = useState(null);
-
-  async function login(user = null) {
-    setUser(user);
-  }
-
-  async function logout(){
-    setUser(null);
-  }
-
+const App = () => {
+  const user = JSON.parse(localStorage.getItem('profile'));
+  
   return (
-    <div className="App">
-      <Navbar/>
-      <Switch>
-        <Route exact path={["/", "/restaurants"]} component={RestaurantsList} />
-        <Route 
-          path="/restaurants/:id/review"
-          render={(props) => (
-            <AddReview {...props} user={props.user} />
-        )}
-        />
-        <Route 
-          path="/restaurants/:id"
-          render={(props) => (
-            <Restaurant {...props} user={props.user} />
-        )}
-        />
-        <Route 
-          path="/login"
-          render={(props) => (
-            <Login {...props} login={props.login} />
-        )}
-        />
-      </Switch>
-    </div>
+    <BrowserRouter>
+      <Container maxWidth="x1">
+        <Navbar/>
+        <Switch>
+          <Route exact path={["/", "/restaurants"]} component={RestaurantsList} />
+          <Route path="/restaurants/:id/review" render={(props) => ( <AddReview {...props} user={props.user} />)}/>
+          <Route path="/restaurants/:id" render={(props) => (
+          <Restaurant {...props} user={props.user} /> )}/>
+          <Route path="/login" exact component={() => (!user ? <Login /> : <Redirect to="/restaurants" />)}/>
+        </Switch>
+      </Container>
+    </BrowserRouter>
   );
 }
 
