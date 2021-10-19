@@ -1,5 +1,5 @@
 # FCONN
-This is an updated MERN stack version of the Old_FCONN project. It will also be available on mobile and a mobile web app.
+This is an updated MERN stack version of the Old_FCONN project. In the future, It will also be available on mobile. However we stuck to the website version for this semester. (Fall 2021)
 
 To start up the project you will need to install npm, node.js, and bootstrap installed. VS code is the preferred IDE for development.
 
