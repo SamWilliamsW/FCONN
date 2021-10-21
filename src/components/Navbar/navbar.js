@@ -35,12 +35,10 @@ export default function Navbar() {
         <AppBar className={styles.appBar} position="static" color="inherit">
             {user === null ? 
               <Link to="/auth" className={styles.brandContainer} style={{textDecoration: 'none'}}>
-                <h4 className={styles.imageUrl}>Food Connection</h4>
-                <img className={styles.image} src="fconnLogo.png" alt="icon" height="40px" />
+                <h4 className={styles.imageUrl}>Campus Cantina</h4>
               </Link>
             : <Link to="/" className={styles.brandContainer} style={{textDecoration: 'none'}}>
-                <h4 className={styles.imageUrl}>Food Connection</h4>
-                <img className={styles.image} src="fconnLogo.png" alt="icon" height="40px" />
+                <h4 className={styles.imageUrl}>Campus Cantina</h4>
               </Link>
             }
             <Toolbar className={styles.toolbar}>
