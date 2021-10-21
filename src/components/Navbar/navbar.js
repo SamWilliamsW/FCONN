@@ -1,8 +1,8 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import { Avatar, Button, AppBar, Toolbar, Typography} from '@material-ui/core'
-import decode from 'jwt-decode';
 import { Link, useHistory, useLocation } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+import decode from 'jwt-decode';
 import * as actionType from '../../constants/actionTypes';
 import useStyles from './styles';
 
@@ -15,7 +15,7 @@ export default function Navbar() {
 
     const logout = () => {
         dispatch({ type: actionType.LOGOUT });
-        history.push('/login');
+        history.push('/auth');
         setUser(null);
       };
 
@@ -24,8 +24,8 @@ export default function Navbar() {
     
         if (token) {
           const decodedToken = decode(token);
-          if (decodedToken.exp * 1000 < new Date().getTime()) 
-          logout();
+          
+          if (decodedToken.exp * 1000 < new Date().getTime()) logout();
         }
     
         setUser(JSON.parse(localStorage.getItem('profile')));
@@ -34,7 +34,7 @@ export default function Navbar() {
     return (
         <AppBar className={styles.appBar} position="static" color="inherit">
             {user === null ? 
-              <Link to="/login" className={styles.brandContainer} style={{textDecoration: 'none'}}>
+              <Link to="/auth" className={styles.brandContainer} style={{textDecoration: 'none'}}>
                 <h4 className={styles.imageUrl}>Food Connection</h4>
                 <img className={styles.image} src="fconnLogo.png" alt="icon" height="40px" />
               </Link>
@@ -46,12 +46,12 @@ export default function Navbar() {
             <Toolbar className={styles.toolbar}>
                 {user?.result ? (
                 <div className={styles.profile}>
-                    <Avatar className={styles.purple} alt={user?.result.name} src={user?.result.imageUrl}>{user?.result.name.charAt(0)}</Avatar>
+                    <Avatar className={styles.purple} alt={user?.result.name} src={user?.result.imageUrl}></Avatar>
                     <Typography className={styles.userName} variant="h6">{user?.result.name}</Typography>
-                    <Button variant="contained" to="/login" className={styles.logout} color="secondary" onClick={logout}>Logout</Button>
+                    <Button variant="contained" to="/auth" className={styles.logout} color="secondary" onClick={logout}>Logout</Button>
                 </div>
                 ) : (
-                <Button component={Link} to="/login" variant="contained" color="primary">Sign In</Button>
+                <Button component={Link} to="/auth" variant="contained" color="primary">Sign In</Button>
                 )}
             </Toolbar>
         </AppBar>
