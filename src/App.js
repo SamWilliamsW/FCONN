@@ -2,10 +2,10 @@ import React from "react";
 import { Container } from '@material-ui/core';
 import { Switch, Route, Redirect, BrowserRouter } from "react-router-dom"
 import './App.css';
-import "bootstrap/dist/css/bootstrap.min.css";
-import AddReview from "./components/Restaurants/add-review";
-import Restaurant from "./components/Restaurants/restaurants";
 import Auth from "./components/Auth/auth";
+import Home from "./components/Home/home";
+import CreatorOrTag from "./components/CreatorOrTag/CreatorOrTag";
+import PostDetails from './components/PostDetails/PostDetails';
 import Navbar from "./components/Navbar/navbar";
 
 const App = () => {
@@ -16,11 +16,12 @@ const App = () => {
       <Container maxWidth="lg">
         <Navbar/>
         <Switch>
-          <Route path="/" exact component={() => <Redirect to="/restaurants" />}/>
-          <Route path="/restaurants/:id/review" render={(props) => ( <AddReview {...props} user={props.user} />)}/>
-          <Route path="/restaurants/:id" render={(props) => (
-          <Restaurant {...props} user={props.user} /> )}/>
-          <Route path="/auth" exact component={() => (!user ? <Auth /> : <Redirect to="/restaurants"/>)} />
+          <Route path="/" exact component={() => <Redirect to="/posts" />}/>
+          <Route path="/posts" exact component={Home} />
+          <Route path="/posts/search" exact component={Home} />
+          <Route path="/posts/:id" exact component={PostDetails} />
+          <Route path={['/creators/:name', '/tags/:name']} component={CreatorOrTag} />
+          <Route path="/auth" exact component={() => (!user ? <Auth /> : <Redirect to="/posts"/>)} />
         </Switch>
       </Container>
     </BrowserRouter>

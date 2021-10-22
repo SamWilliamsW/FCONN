@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 import { Avatar, Button, AppBar, Toolbar, Typography} from '@material-ui/core'
 import { Link, useHistory, useLocation } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import decode from 'jwt-decode';
 import * as actionType from '../../constants/actionTypes';
 import useStyles from './styles';
+import CreatorOrTag from '../CreatorOrTag/CreatorOrTag';
 
 export default function Navbar() {
     const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')));
@@ -13,23 +14,24 @@ export default function Navbar() {
     const history = useHistory();
     const styles = useStyles();
 
-    const logout = () => {
+    const logout = useCallback(() => {
         dispatch({ type: actionType.LOGOUT });
         history.push('/auth');
         setUser(null);
-      };
+    }, []);
 
-      useEffect(() => {
-        const token = user?.token;
-    
-        if (token) {
-          const decodedToken = decode(token);
-          
-          if (decodedToken.exp * 1000 < new Date().getTime()) logout();
-        }
-    
-        setUser(JSON.parse(localStorage.getItem('profile')));
-      }, [location]);
+    useEffect(() => {
+      const token = user?.token;
+      
+      if (token) {
+        const decodedToken = decode(token);
+        if (decodedToken.exp * 1000 < new Date().getTime()){
+          logout();
+        } 
+      }
+
+      setUser(JSON.parse(localStorage.getItem('profile')));
+    }, [location]);
 
     return (
         <AppBar className={styles.appBar} position="static" color="inherit">
@@ -45,7 +47,7 @@ export default function Navbar() {
                 {user?.result ? (
                 <div className={styles.profile}>
                     <Avatar className={styles.purple} alt={user?.result.name} src={user?.result.imageUrl}></Avatar>
-                    <Typography className={styles.userName} variant="h6">{user?.result.name}</Typography>
+                    <Button link={CreatorOrTag} className={styles.userName} variant="h6">{user?.result.name}</Button>
                     <Button variant="contained" to="/auth" className={styles.logout} color="secondary" onClick={logout}>Logout</Button>
                 </div>
                 ) : (
