@@ -13,13 +13,14 @@ export default makeStyles((theme) => ({
     [theme.breakpoints.down('sm')]: {
       flexDirection: 'column',
     },
-    backgroundColor: '#e0aa0f '
+    backgroundColor: '#e0aa0f'
   },
   heading: {
     color: theme.palette.primary.main,
     textDecoration: 'none',
     fontSize: '2em',
-    fontWeight: 300,
+    fontWeight: 700,
+    fontFamily: 'Exo,Helvetica Neue,sans-serif',
   },
   image: {
     marginLeft: '10px',
