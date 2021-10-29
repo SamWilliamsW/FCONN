@@ -4,7 +4,7 @@ export default makeStyles(() => ({
     background: {
         backgroundColor: '#112e51',
         maxWidth: '100%',
-        height: '100vh',
-        // TODO: fix height (extend below vh)
+        height: '100%',
+        minHeight: '100vh'
     }
 }));
