@@ -1,6 +1,9 @@
 import { makeStyles } from '@material-ui/core/styles';
 
 export default makeStyles((theme) => ({
+  container: {
+    backgroundColor: '#e0aa0f'
+  },
   media: {
     borderRadius: '20px',
     objectFit: 'cover',

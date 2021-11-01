@@ -4,7 +4,7 @@ import { deepPurple } from '@material-ui/core/colors';
 export default makeStyles((theme) => ({
   appBar: {
     borderRadius: 15,
-    margin: '30px 0',
+    marginBottom: '30px',
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -13,12 +13,14 @@ export default makeStyles((theme) => ({
     [theme.breakpoints.down('sm')]: {
       flexDirection: 'column',
     },
+    backgroundColor: '#e0aa0f'
   },
   heading: {
     color: theme.palette.primary.main,
     textDecoration: 'none',
     fontSize: '2em',
-    fontWeight: 300,
+    fontWeight: 700,
+    fontFamily: 'Exo,Helvetica Neue,sans-serif',
   },
   image: {
     marginLeft: '10px',
@@ -45,6 +47,7 @@ export default makeStyles((theme) => ({
   },
   logout: {
     marginLeft: '20px',
+    padding: '6px 12px'
   },
   userName: {
     display: 'flex',

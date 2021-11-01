@@ -40,7 +40,7 @@ const Post = () => {
   const recommendedPosts = posts.filter(({ _id }) => _id !== post._id);
 
   return (
-    <Paper style={{ padding: '20px', borderRadius: '15px' }} elevation={6}>
+    <Paper className={styles.container} style={{ padding: '20px', borderRadius: '15px' }} elevation={6}>
       <div className={styles.card}>
         <div className={styles.section}>
           <Typography variant="h3" component="h2">{post.title}</Typography>
