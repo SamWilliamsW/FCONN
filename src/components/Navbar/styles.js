@@ -1,6 +1,6 @@
-import {makeStyles} from '@material-ui/core/styles';
-import {deepPurple} from '@material-ui/core/colors';
-import {lightBlue} from '@material-ui/core/colors';
+import { makeStyles } from '@material-ui/core/styles';
+import { deepPurple } from '@material-ui/core/colors';
+import { lightBlue } from '@material-ui/core/colors';
 
 export default makeStyles((theme) => ({
   appBar: {
@@ -14,7 +14,7 @@ export default makeStyles((theme) => ({
     [theme.breakpoints.down('sm')]: {
       flexDirection: 'column',
     },
-    backgroundColor: '#e0aa0f'
+    backgroundColor: '#e0aa0f',
   },
   heading: {
     color: theme.palette.primary.main,
@@ -22,6 +22,7 @@ export default makeStyles((theme) => ({
     fontSize: '2em',
     fontWeight: 700,
     fontFamily: 'Cooper Black',
+    color: '#112e51',
   },
   image: {
     marginLeft: '10px',
@@ -49,6 +50,9 @@ export default makeStyles((theme) => ({
   logout: {
     marginLeft: '20px',
     padding: '6px 12px'
+  },
+  signin: {
+    backgroundColor: '#112e51',
   },
   userName: {
     display: 'flex',

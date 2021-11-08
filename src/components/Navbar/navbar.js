@@ -51,7 +51,7 @@ export default function Navbar() {
             <Button variant="contained" to="/auth" className={styles.logout} color="secondary" onClick={logout}>Logout</Button>
           </div>
         ) : (
-          <Button component={Link} to="/auth" variant="contained" color="primary">Sign In</Button>
+          <Button className={styles.signin} component={Link} to="/auth" variant="contained" color="primary">Sign In</Button>
         )}
       </Toolbar>
     </AppBar>

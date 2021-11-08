@@ -66,11 +66,12 @@ const Form = ({ currentId, setCurrentId }) => {
           <ChipInput
             name="tags"
             variant="outlined"
-            label="Tags"
+            label="Tags: press Enter after each tag"
             fullWidth
             value={postData.tags}
             onAdd={(chip) => handleAddChip(chip)}
             onDelete={(chip) => handleDeleteChip(chip)}
+            blurBehavior="ignore"
           />
         </div>
         <div className={classes.fileInput}><FileBase type="file" multiple={false} onDone={({ base64 }) => setPostData({ ...postData, selectedFile: base64 })} /></div>
