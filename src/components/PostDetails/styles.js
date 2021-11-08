@@ -53,4 +53,8 @@ export default makeStyles((theme) => ({
     overflowY: 'auto',
     marginRight: '30px',
   },
+  message: {
+    wordBreak: 'break-all',
+
+  }
 }));

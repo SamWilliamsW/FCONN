@@ -50,7 +50,7 @@ const Post = () => {
             </Link>
           ))}
           </Typography>
-          <Typography gutterBottom variant="body1" component="p">{post.message}</Typography>
+          <Typography className={styles.message} gutterBottom variant="body1" component="p">{post.message}</Typography>
           <Typography variant="h6">
             Created by:
             <Link to={`/creators/${post.name}`} style={{ textDecoration: 'none', color: '#3f51b5' }}>
