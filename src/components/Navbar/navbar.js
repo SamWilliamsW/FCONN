@@ -36,7 +36,7 @@ export default function Navbar() {
   return (
     <AppBar className={styles.appBar} position="static">
       {user === null ?
-        <Link to="/auth" className={styles.brandContainer} style={{ textDecoration: 'none' }}>
+        <Link to="/" className={styles.brandContainer} style={{ textDecoration: 'none' }}>
           <h4 className={styles.heading}>CAMPUS CANTINA</h4>
         </Link>
         : <Link to="/" className={styles.brandContainer} style={{ textDecoration: 'none' }}>

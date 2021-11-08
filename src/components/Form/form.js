@@ -64,7 +64,7 @@ const Form = ({ currentId, setCurrentId }) => {
         <TextField name="message" variant="outlined" label="Message" fullWidth multiline rows={4} value={postData.message} onChange={(e) => setPostData({ ...postData, message: e.target.value })} />
         <div style={{ padding: '5px 0', width: '94%' }}>
           <ChipInput
-            newChipKeys={['Enter',' ', ',']}
+            newChipKeys={['Enter',' ', ',', 'Tab']}
             name="tags"
             variant="outlined"
             label="Tags"
