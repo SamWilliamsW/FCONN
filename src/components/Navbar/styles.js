@@ -4,13 +4,15 @@ import { lightBlue } from '@material-ui/core/colors';
 
 export default makeStyles((theme) => ({
   appBar: {
-    borderRadius: 15,
+    //padding: '0px',
+    //width: '100vw',
+    //borderRadius: 15,
     marginBottom: '30px',
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    padding: '10px 50px',
+    padding: '5px 30px',
     [theme.breakpoints.down('sm')]: {
       flexDirection: 'column',
     },
