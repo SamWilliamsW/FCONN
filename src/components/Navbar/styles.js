@@ -1,5 +1,6 @@
-import { makeStyles } from '@material-ui/core/styles';
-import { deepPurple } from '@material-ui/core/colors';
+import {makeStyles} from '@material-ui/core/styles';
+import {deepPurple} from '@material-ui/core/colors';
+import {lightBlue} from '@material-ui/core/colors';
 
 export default makeStyles((theme) => ({
   appBar: {
@@ -20,7 +21,7 @@ export default makeStyles((theme) => ({
     textDecoration: 'none',
     fontSize: '2em',
     fontWeight: 700,
-    fontFamily: 'Exo,Helvetica Neue,sans-serif',
+    fontFamily: 'Cooper Black',
   },
   image: {
     marginLeft: '10px',
@@ -61,5 +62,9 @@ export default makeStyles((theme) => ({
   purple: {
     color: theme.palette.getContrastText(deepPurple[500]),
     backgroundColor: deepPurple[500],
+  },
+  blue: {
+    color: theme.palette.getContrastText(lightBlue[900]),
+    backgroundColor: lightBlue[900],
   },
 }));
