@@ -75,7 +75,7 @@ const Form = ({ currentId, setCurrentId }) => {
             blurBehavior="ignore"
           />
         </div>
-        <div className={styles.fileInput}><label className={styles.fileWrapper}><input className={styles.fileButton} type="file" multiple={false} onDone={({ base64 }) => setPostData({ ...postData, selectedFile: base64 })}/>Add Image</label></div>
+        <div className={styles.fileInput}><FileBase type="file" multiple={false} onDone={({ base64 }) => setPostData({ ...postData, selectedFile: base64 })} /></div>
         <Button className={styles.buttonSubmit} variant="contained" color="primary" size="large" type="submit" fullWidth>Submit</Button>
         <Button variant="contained" color="secondary" size="small" onClick={clear} fullWidth>Clear</Button>
       </form>
