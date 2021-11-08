@@ -46,7 +46,7 @@ export default function Navbar() {
       <Toolbar className={styles.toolbar}>
         {user?.result ? (
           <div className={styles.profile}>
-            <Avatar className={styles.purple} alt={user?.result.name} src={user?.result.imageUrl}></Avatar>
+            <Avatar className={styles.blue} alt={user?.result.name} src={user?.result.imageUrl}></Avatar>
             <Button link={CreatorOrTag} className={styles.userName} variant="h6">{user?.result.name}</Button>
             <Button variant="contained" to="/auth" className={styles.logout} color="secondary" onClick={logout}>Logout</Button>
           </div>
