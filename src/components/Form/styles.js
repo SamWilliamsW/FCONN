@@ -19,6 +19,16 @@ export default makeStyles((theme) => ({
     width: '97%',
     margin: '10px 0',
   },
+  fileButton: {
+    display: 'none'
+  },
+  fileWrapper: {
+    backgroundColor: 'grey',
+    color: 'white',
+    padding: '5px',
+    borderRadius: '5px',
+    marginBottom: 10,
+  },
   buttonSubmit: {
     marginBottom: 10,
     backgroundColor: '#112e51'
