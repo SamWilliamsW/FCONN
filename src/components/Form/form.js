@@ -67,7 +67,7 @@ const Form = ({ currentId, setCurrentId }) => {
             newChipKeys={['Enter',' ', ',']}
             name="tags"
             variant="outlined"
-            label="Tags: press Enter after each tag"
+            label="Tags"
             fullWidth
             value={postData.tags}
             onAdd={(chip) => handleAddChip(chip)}
