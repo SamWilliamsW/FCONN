@@ -56,6 +56,7 @@ const Home = () => {
             <AppBar className={classes.appBarSearch} position="static" color="inherit">
               <TextField onKeyDown={handleKeyPress} name="search" variant="outlined" label="Search Posts" fullWidth value={search} onChange={(e) => setSearch(e.target.value)} />
               <ChipInput
+                newChipKeys={['Enter', ' ', ',']}
                 style={{ margin: '10px 0' }}
                 value={tags}
                 onAdd={(chip) => handleAddChip(chip)}
