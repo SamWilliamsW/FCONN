@@ -4,9 +4,7 @@ import { lightBlue } from '@material-ui/core/colors';
 
 export default makeStyles((theme) => ({
   appBar: {
-    //padding: '0px',
-    //width: '100vw',
-    //borderRadius: 15,
+    //height: '100px',
     marginBottom: '30px',
     display: 'flex',
     flexDirection: 'row',
@@ -22,7 +20,7 @@ export default makeStyles((theme) => ({
     color: theme.palette.primary.main,
     textDecoration: 'none',
     fontSize: '2em',
-    fontWeight: 700,
+    //fontWeight: 700,
     fontFamily: 'Cooper Black',
     color: '#112e51',
   },
@@ -41,7 +39,7 @@ export default makeStyles((theme) => ({
   profile: {
     display: 'flex',
     justifyContent: 'space-between',
-    width: '400px',
+    //width: '400px',
     alignItems: 'center',
     [theme.breakpoints.down('sm')]: {
       width: 'auto',
@@ -57,9 +55,15 @@ export default makeStyles((theme) => ({
     backgroundColor: '#112e51',
   },
   userName: {
+    marginLeft: '10px',
+    backgroundColor: '#112e51',
     display: 'flex',
+    color: 'white',
     alignItems: 'center',
     textAlign: 'center',
+    '&:hover': {
+      backgroundColor: 'grey'
+    }
   },
   brandContainer: {
     display: 'flex',
