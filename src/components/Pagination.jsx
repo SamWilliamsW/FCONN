@@ -11,7 +11,7 @@ const Paginate = ({ page }) => {
   const { numberOfPages } = useSelector((state) => state.posts);
   const dispatch = useDispatch();
 
-  const classes = useStyles();
+  const styles = useStyles();
 
   useEffect(() => {
     if (page) {
@@ -21,12 +21,12 @@ const Paginate = ({ page }) => {
 
   return (
     <Pagination
-      classes={{ ul: classes.ul }}
+      classes={{ ul: styles.ul }}
       count={numberOfPages}
       page={Number(page) || 1}
       variant="outlined"
       renderItem={(item) => (
-        <PaginationItem {...item} className={classes.item} component={Link} to={`/posts?page=${item.page}`} />
+        <PaginationItem {...item} className={styles.item} component={Link} to={`/posts?page=${item.page}`} />
       )}
     />
   );

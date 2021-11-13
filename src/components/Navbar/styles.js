@@ -4,19 +4,19 @@ import { lightBlue } from '@material-ui/core/colors';
 
 export default makeStyles((theme) => ({
   appBar: {
-    //height: '100px',
     marginBottom: '30px',
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    padding: '5px 30px',
+    padding: '10px',
     [theme.breakpoints.down('sm')]: {
       flexDirection: 'column',
     },
     backgroundColor: '#e0aa0f',
   },
   heading: {
+    marginLeft: '10px',
     color: theme.palette.primary.main,
     textDecoration: 'none',
     fontSize: '2em',

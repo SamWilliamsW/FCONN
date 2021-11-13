@@ -57,7 +57,7 @@ export default function Navbar() {
           <div className={styles.profile}>
             <Avatar className={styles.blue} alt={user?.result.name} src={user?.result.imageUrl}></Avatar>
             <Button className={styles.userName} variant="contained" onClick={profile}>{user?.result.name}</Button>
-            <Button variant="contained" className={styles.logout} color="secondary" onClick={logout}>Logout</Button>
+            <Button variant="contained" className={styles.logout} color="secondary" onClick={logout} href="/auth">Logout</Button>
           </div>
         ) : (
           <Button className={styles.signin} onClick={backToSignIn} variant="contained" color="primary">Sign In</Button>

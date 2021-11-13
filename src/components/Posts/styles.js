@@ -13,7 +13,7 @@ export default makeStyles((theme) => ({
 
   },
   container: {
-    backgroundColor: '#e0aa0f '
+    backgroundColor: '#e0aa0f'
   },
   heading: {
     color: 'rgba(0,183,255, 1)',

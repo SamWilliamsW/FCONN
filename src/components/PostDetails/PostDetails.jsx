@@ -40,7 +40,7 @@ const Post = () => {
   const recommendedPosts = posts.filter(({ _id }) => _id !== post._id);
 
   return (
-    <Paper className={styles.container} style={{ padding: '20px', borderRadius: '15px' }} elevation={6}>
+    <Paper className={styles.container} elevation={6}>
       <div className={styles.card}>
         <div className={styles.section}>
           <Typography variant="h3" component="h2">{post.title}</Typography>
@@ -57,15 +57,17 @@ const Post = () => {
               {` ${post.name}`}
             </Link>
           </Typography>
+          <div className={styles.imageSection}>
+            {post.selectedFile ? 
+              <img className={styles.pic} src={post.selectedFile}  alt={post.title}/> : 
+              <img className={styles.nopic} src={'https://user-images.githubusercontent.com/194400/49531010-48dad180-f8b1-11e8-8d89-1e61320e1d82.png'} alt={post.title} />}
+          </div>
           <Typography variant="body1">{moment(post.createdAt).fromNow()}</Typography>
           <Divider style={{ margin: '20px 0' }} />
           <Typography variant="body1"><strong>Realtime Chat - coming soon!</strong></Typography>
           <Divider style={{ margin: '20px 0' }} />
           <CommentSection post={post} />
           <Divider style={{ margin: '20px 0' }} />
-        </div>
-        <div className={styles.imageSection}>
-          <img className={styles.media} src={post.selectedFile || 'https://user-images.githubusercontent.com/194400/49531010-48dad180-f8b1-11e8-8d89-1e61320e1d82.png'} alt={post.title} />
         </div>
       </div>
       {!!recommendedPosts.length && (

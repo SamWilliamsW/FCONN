@@ -54,10 +54,10 @@ const Home = () => {
           </Grid>
           <Grid item xs={12} sm={6} md={3}>
             <AppBar className={classes.appBarSearch} position="static" color="inherit">
-              <TextField onKeyDown={handleKeyPress} name="search" variant="outlined" label="Search Posts" fullWidth value={search} onChange={(e) => setSearch(e.target.value)} />
+              <TextField style={{ backgroundColor: '#FFF', borderRadius: 4 }} onKeyDown={handleKeyPress} name="search" variant="outlined" label="Search Posts" fullWidth value={search} onChange={(e) => setSearch(e.target.value)} />
               <ChipInput
                 newChipKeys={['Enter', ' ', ',', 'Tab']}
-                style={{ margin: '10px 0' }}
+                style={{ margin: '10px 0', backgroundColor: '#FFF', borderRadius: 4 }}
                 value={tags}
                 onAdd={(chip) => handleAddChip(chip)}
                 onDelete={(chip) => handleDeleteChip(chip)}

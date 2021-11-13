@@ -2,19 +2,25 @@ import { makeStyles, alpha } from '@material-ui/core/styles';
 
 export default makeStyles((theme) => ({
   container: {
-    backgroundColor: '#e0aa0f'
+    backgroundColor: '#DCDCDC',
+    margin: '20px',
+    padding: '20px', 
+    borderRadius: '15px',
   },
-  media: {
+  pic: {
     borderRadius: '20px',
-    objectFit: 'cover',
-    width: '50%',
-    height: '100%',
-
+    objectFit: 'contain',
+    width: '500px'
+  },
+  nopic: {
+    borderRadius: '20px',
+    objectFit: 'contain',
+    width: '500px'
   },
   card: {
     display: 'flex',
     width: '100%',
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('lg')]: {
       flexWrap: 'wrap',
       flexDirection: 'column',
     },
@@ -23,12 +29,6 @@ export default makeStyles((theme) => ({
     borderRadius: '20px',
     margin: '10px',
     flex: 1,
-  },
-  imageSection: {
-    marginLeft: '20px',
-    [theme.breakpoints.down('sm')]: {
-      marginLeft: 0,
-    },
   },
   recommendedPosts: {
     display: 'flex',
@@ -45,11 +45,12 @@ export default makeStyles((theme) => ({
     height: '39vh',
   },
   commentsOuterContainer: {
+    width: '100%',
     display: 'flex',
     justifyContent: 'space-between',
   },
   commentsInnerContainer: {
-    height: '200px',
+    height: '300px',
     overflowY: 'auto',
     marginRight: '30px',
   },

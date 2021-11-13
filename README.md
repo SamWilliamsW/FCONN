@@ -6,11 +6,11 @@ To start up the project you will need to install npm, node.js, and bootstrap ins
 ### Node.js and NPM:
 * Visit https://nodejs.org/en/download/ and download the installer for your OS.
 * Node.js and NPM will be installed using the above link.
-* To verify the install was successful, run "node -v" then "npm -v" in your terminal without the quotations. The 
+* To verify the install was successful, run "node -v" then "npm -v" in your terminal without the quotations.
 
 **The next steps will require you have installed Node.js and NPM correctly.** 
 
-### Bootstrap and other dependencies:
+### MaterialUI and other dependencies:
 * Navigate to the FCONN folder and open it up in the terminal.  
 * Type the command "npm install" without the quotations.
 * This command will install all of the dependencies in the package.json file.
@@ -18,10 +18,19 @@ To start up the project you will need to install npm, node.js, and bootstrap ins
 
 ### Starting the project: 
 * Navigate to the FCONN folder and open it up in the terminal.
+* I recommend using Visual Studio Code for this project.
+* Install the latest node.js lts version.
+* Run npm install in the terminal of this project.
 * Type the command "npm start" without the quotations. 
 * The localhost react app will start in your default browser.
-* The full functionality of the project will not be available unless you have the FCONN Back end runnng as well.
+* The full functionality of the project will not be available unless you have the FCONN Backend runnng as well.
+* You can check your global dependencies with this command: npm list -g --depth=0
+* The only global depedency you need is nodemon for this project.
+* You can install by typing "npm install -g nodemon" in the terminal.
 * Link to the Backend repo https://github.com/lucasdale99/FCONN_Backend
+
+### Making Changes to Google Services
+* 
 	
 
 Don't forget:
