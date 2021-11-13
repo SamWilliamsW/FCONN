@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { useParams, useLocation } from 'react-router-dom';
 import { Typography, CircularProgress, Grid, Divider } from '@material-ui/core';
 import { useDispatch, useSelector } from 'react-redux';
-
 import Post from '../Posts/Post/post';
 import { getPostsByCreator, getPostsBySearch } from '../../actions/posts';
 

@@ -5,7 +5,6 @@ import { useDispatch } from 'react-redux';
 import decode from 'jwt-decode';
 import * as actionType from '../../constants/actionTypes';
 import useStyles from './styles';
-import CreatorOrTag from '../CreatorOrTag/CreatorOrTag';
 
 export default function Navbar() {
   const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')));
@@ -15,10 +14,20 @@ export default function Navbar() {
   const styles = useStyles();
 
   const logout = useCallback(() => {
+    setUser(null);
     dispatch({ type: actionType.LOGOUT });
     history.push('/auth');
-    setUser(null);
   }, []);
+
+  const profile = () => {
+    //console.log(user.result);
+    history.push(`/creator/${user.result.name}`);
+  }
+
+  const backToSignIn = () => {
+    history.push('/auth');
+    setUser(null);
+  }
 
   useEffect(() => {
     const token = user?.token;
@@ -35,11 +44,11 @@ export default function Navbar() {
 
   return (
     <AppBar className={styles.appBar} position="static">
-      {user === null ?
+      {user?.result == undefined || user?.result == null ?
         <Link to="/" className={styles.brandContainer} style={{ textDecoration: 'none' }}>
           <h4 className={styles.heading}>CAMPUS CANTINA</h4>
         </Link>
-        : <Link to="/" className={styles.brandContainer} style={{ textDecoration: 'none' }}>
+        : <Link to="/posts" className={styles.brandContainer} style={{ textDecoration: 'none' }}>
           <h4 className={styles.heading}>CAMPUS CANTINA</h4>
         </Link>
       }
@@ -47,11 +56,11 @@ export default function Navbar() {
         {user?.result ? (
           <div className={styles.profile}>
             <Avatar className={styles.blue} alt={user?.result.name} src={user?.result.imageUrl}></Avatar>
-            <Button link={CreatorOrTag} className={styles.userName} variant="h6">{user?.result.name}</Button>
-            <Button variant="contained" to="/auth" className={styles.logout} color="secondary" onClick={logout}>Logout</Button>
+            <Button className={styles.userName} variant="contained" onClick={profile}>{user?.result.name}</Button>
+            <Button variant="contained" className={styles.logout} color="secondary" onClick={logout}>Logout</Button>
           </div>
         ) : (
-          <Button className={styles.signin} component={Link} to="/auth" variant="contained" color="primary">Sign In</Button>
+          <Button className={styles.signin} onClick={backToSignIn} variant="contained" color="primary">Sign In</Button>
         )}
       </Toolbar>
     </AppBar>

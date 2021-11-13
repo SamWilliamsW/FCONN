@@ -1,4 +1,4 @@
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, alpha } from '@material-ui/core/styles';
 
 export default makeStyles((theme) => ({
   container: {
@@ -7,8 +7,8 @@ export default makeStyles((theme) => ({
   media: {
     borderRadius: '20px',
     objectFit: 'cover',
-    width: '100%',
-    maxHeight: '600px',
+    width: '50%',
+    height: '100%',
 
   },
   card: {

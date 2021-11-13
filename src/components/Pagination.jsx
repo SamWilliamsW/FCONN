@@ -25,7 +25,6 @@ const Paginate = ({ page }) => {
       count={numberOfPages}
       page={Number(page) || 1}
       variant="outlined"
-      color="#112e51"
       renderItem={(item) => (
         <PaginationItem {...item} className={classes.item} component={Link} to={`/posts?page=${item.page}`} />
       )}
