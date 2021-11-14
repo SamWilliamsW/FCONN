@@ -21,7 +21,7 @@ const App = () => {
     <BrowserRouter>
       <Container className={styles.background} maxWidth="lg">
         <Navbar />
-          <Suspense fallback={<div>Loading...</div>}>
+          <Suspense fallback={<div style={{color: 'white'}}>Loading...</div>}>
             <Switch>
               <Route path="/" exact component={() => (user?.result == null || user?.result == undefined ? <Auth/> : <Redirect to="/posts" />)}/>
               <Route path="/posts" exact component={Home} />
