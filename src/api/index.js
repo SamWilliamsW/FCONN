@@ -1,9 +1,6 @@
 import axios from 'axios';
 
-const localURL = 'https://localhost:5000';
-//const prodURL = 'https://campuscantina.vercel.app';
-
-const API = axios.create({ baseURL: 'https://localhost:5000'});
+const API = axios.create({ baseURL: 'http://localhost:5000' });
 
 API.interceptors.request.use((req) => {
   if (localStorage.getItem('profile')) {
